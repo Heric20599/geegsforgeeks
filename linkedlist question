@@ -1,0 +1,28 @@
+Q1-find the middle element of linked list and we have to return second middle if  length will be even ?
+
+
+/* Node of a linked list
+ class Node {
+   int data;
+    Node next;
+    Node(int d)  { data = d;  next = null; }
+}
+*/
+
+class Solution
+{
+    int getMiddle(Node head)
+    {
+         // Your code here.
+         
+         if(head==null)return 0;
+         Node c1 = head;  Node c2 = head;
+         while(c2.next!=null&&c2.next.next!=null){
+             
+             c1=c1.next;
+             c2=c2.next.next;
+         }
+         if(c2.next==null){return c1.data;}
+         return c1.next.data;
+          }
+}
